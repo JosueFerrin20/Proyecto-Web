@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajador</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<!-- Encabezado -->
+    <header>
+
+    </header>
+<!-- Fin del Encabezado -->
+
+<!-- Contenido -->
+    <main>
+        
+        <div class="container">
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="57">
+                <h2>Trabajador - Empleado</h2>
+                <p class="lead">Si tú sabes lo que vales, ve y consigue lo que mereces. </p>
+                <!-- Barra - Buscar -->
+                <div class="input-group mb-3">
+                  <input id="txtBuscar" type="text" class="form-control" placeholder="Buscar por nombre o id..." aria-label="Buscar">
+                  <button id="btnBuscar" class="btn btn-outline-secondary" type="button">Buscar</button>
+                </div>
+              </div>
+              <!-- Tabla de precios (innecesaria de momento) -->
+              <!-- <div class="row g-3">
+                <div class="col-md-5 col-lg-4 order-md-last">
+                  <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">عربة التسوق</span>
+                    <span class="badge bg-secondary rounded-pill">3</span>
+                  </h4>
+                  <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                      <div>
+                        <h6 class="my-0">اسم المنتج</h6>
+                        <small class="text-muted">وصف مختصر</small>
+                      </div>
+                      <span class="text-muted">$12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                      <div>
+                        <h6 class="my-0">المنتج الثاني</h6>
+                        <small class="text-muted">وصف مختصر</small>
+                      </div>
+                      <span class="text-muted">$8</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                      <div>
+                        <h6 class="my-0">البند الثالث</h6>
+                        <small class="text-muted">وصف مختصر</small>
+                      </div>
+                      <span class="text-muted">$5</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+                      <div class="text-success">
+                        <h6 class="my-0">رمز ترويجي</h6>
+                        <small>EXAMPLECODE</small>
+                      </div>
+                      <span class="text-success">-$5</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                      <span>مجموع (USD)</span>
+                      <strong>$20</strong>
+                    </li>
+                  </ul>
+          
+                  <form class="card p-2">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="رمز ترويجي">
+                      <button type="button" class="btn btn-secondary">تحقق</button>
+                    </div>
+                  </form>
+                </div> -->
+                <!-- Fin de Tabla de precios -->
+
+                <!-- Inicio del Formulario -->
+                <div class="col-md-7 col-lg-8">
+                  <h4 class="mb-3">Documentación</h4>
+                  <form id="frmTrabajador" method="GET" action="trabajador-list.html" class="needs-validation" novalidate>
+                    <input type="hidden" id="IdTrabajador">
+                    <div class="row g-3">
+                      <div class="col-sm-6">
+                          <!-- Nombre -->
+                        <label for="txtNombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar un nombre para el Trabajador
+                        </div>
+                      </div>
+                      <!-- Cedula -->
+                      <div class="col-sm-6">
+                        <label for="txtCedula" class="form-label">Cédula</label>
+                        <input type="text" class="form-control" id="cedula" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar la cédula del trabajador
+                        </div>
+                      </div>
+                      <!-- Direccion -->
+                      <div class="col-12">
+                        <label for="txtDireccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="1234 Calle..." required>
+                        <div class="invalid-feedback">
+                          يرجى إدخال عنوان الشحن الخاص بك.
+                        </div>
+                      </div>
+                      <!-- Telefono -->
+                      <div class="col-12">
+                        <label for="txtTelefono" class="form-label">Teléfono<span class="text-muted">(Celular)</span></label>
+                        <input type="text" class="form-control" id="telefono" placeholder="09********">
+                        <div class="invalid-feedback">
+                          يرجى إدخال عنوان بريد إلكتروني صحيح لتصلكم تحديثات الشحن.
+                        </div>
+                      </div>
+                      <!-- Email -->
+                      <div class="col-12">
+                        <label for="txtEmail" class="form-label">E-mail</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="email" placeholder="example@e-mail.com" required>
+                        <div class="invalid-feedback">
+                          اسم المستخدم الخاص بك مطلوب.
+                          </div>
+                        </div>
+                      </div>
+          
+
+                      <!-- Select Sexo -->
+                      <div class="col-md-5">
+                        <label for="txtSexo" class="form-label">Sexo</label>
+                        <select class="form-select" id="sexo" required>
+                          <option value="">Elija</option>
+                          <option value="Masculino">Masculino</option>
+                          <option value="Femenino">Femenino</option>
+                          <option value="Otro">Otro</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          يرجى اختيار بلد صحيح.
+                        </div>
+                      </div>
+
+                      <!-- Select Grado Académico -->
+                      <div class="col-md-4">
+                        <label for="txtGradoAcademico" class="form-label">Grado Académico</label>
+                        <select class="form-select" id="gradoAcademico" required>
+                          <option value="">Elija</option>
+                          <option value="3er Nivel (Universidad)">3er Nivel (Universidad)</option>
+                          <option value="2do Nivel (Secundaria-Colegio)">2do Nivel (Secundaria-Colegio)</option>
+                          <option value="1er Nivel (Primaria-Escuela)">1er Nivel (Primaria-Escuela)</option>  
+                        </select>
+                        
+                        <div class="invalid-feedback">
+                          يرجى اختيار اسم منطقة صحيح.
+                        </div>
+                        
+                       </div> 
+                       <!-- Título -->
+                      <div class="col-md-3">
+                        <label for="txtTitulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="titulo" placeholder="" required>
+                        <div class="invalid-feedback">
+                          الرمز البريدي مطلوب.
+                        </div>
+                      </div>
+                    </div>
+          
+                    <!-- (Radio botón) Tipo -->
+                    <hr class="my-4">
+
+                    <div class="col-md-4">
+                      <label for="txtGradoAcademico" class="form-label">Tipo</label>
+                      <select class="form-select" id="tipoTrabajador" required>
+                        <option value="">Elija</option>
+                        <option value="Cuello Blanco">Cuello Blanco</option>
+                        <option value="Cuello Azul">Cuello Azul</option>
+                        <option value="Cuello Rosa">Cuello Rosa</option> 
+                        <option value="Cuello Verde">Cuello Verde</option>  
+ 
+                      </select>
+                      
+                      <div class="invalid-feedback">
+                        يرجى اختيار اسم منطقة صحيح.
+                      </div>
+                      
+                     </div> 
+          
+                    
+                    <hr class="my-4">
+          
+                    <button class="w-100 btn btn-primary btn-lg" id="btnGuardar" type="submit">Guardar</button>
+                  </form>
+                </div>
+              </div>
+        </div>
+        
+       
+    </main>
+<!-- Fin del contenido -->
+
+
+<!-- Pie de Pagina -->
+    <footer>
+
+    </footer>
+    <!-- Fin del Pie de Pagina -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script>    
+    <script src="js/script-trabajador-form.js"></script>
+    <script src="js/script-head-foot.js"></script>
+    
+</body>
+</html>
