@@ -1,21 +1,26 @@
 function serializeForm() {
-    let empresa = {
-        "idEmpresa":$("#IdEmpresa").val(),
+    let curso = {
+        "idCurso":$("#IdCurso").val(),
         "nombre": $("#nombre").val(),
+        "tipo":$("#tipo").val(),
+        "acreditacion":$("#acreditacion").val(),
+        "horas":$("#horas").val(),
         "descripcion": $("#descripcion").val(),
-        "telefono":$("#telefono").val(),
+        
         
     };
-    return empresa;
+    return curso;
 }
 
-function set(empresa){
+function set(curso){
     
-    $("#IdEmpresa").val(empresa.idEmpresa);
-    $("#nombre").val(empresa.nombre);
-    $("#descripcion").val(empresa.descripcion);
-    // $("#direccion").val(empresa.direccion);
-    $("#telefono").val(empresa.telefono);
+    $("#IdCurso").val(curso.idCurso);
+    $("#nombre").val(curso.nombre);
+    $("#tipo").val(curso.tipo);
+    $("#acreditacion").val(curso.acreditacion);
+    $("#horas").val(curso.horas);
+    $("#descripcion").val(curso.descripcion);
+    
     
 }
 
@@ -23,23 +28,23 @@ function set(empresa){
 // Funcion que guarda la info
 function save() {
    // validar 
-   var empresa = serializeForm();
-   console.log(empresa);
+   var curso = serializeForm();
+   console.log(curso);
 
-   let requestBody=JSON.stringify(empresa);
+   let requestBody=JSON.stringify(curso);
    console.log(requestBody);
    // Se utiliza JQuery para enviar datos al Backend 
-   if(empresa.idEmpresa==0){
+   if(curso.idCurso==0){
        $.ajax({
            type: "POST", //verbo de HTTP a utilizar 
-           url: "http://localhost:8080/empresa/create", // Direccion para realizar la peticion HTTP
+           url: "http://localhost:8080/curso/create", // Direccion para realizar la peticion HTTP
            data: requestBody,// El contenido Body de la petición HTTP
            contentType: "application/json",
            crossDomain: true,
            dataType: "json",
            succes : function(response){
                console.log(response);
-               alert("La empresa a sido creada correctamente");
+               alert("El curso a sido creado correctamente");
            },
            error: function (err) {
                console.error(err);
@@ -59,10 +64,10 @@ function save() {
        });
    } else{
        //Update
-       let id = empresa.idEmpresa;
+       let id = curso.idCurso;
        $.ajax({        
            type: "PUT", //Verbo de HTTP a utilizar
-           url: "http://localhost:8080/empresa/update/" + id, //Dirección para realizar la petición HTTP
+           url: "http://localhost:8080/curso/update/" + id, //Dirección para realizar la petición HTTP
            data: requestBody, //El contenido Body de la petición HTTP                
            contentType : "application/json",
            crossDomain: true,
@@ -87,7 +92,7 @@ function retrieve(){
     if(isNaN(id)){
         $.ajax({        
             type: "GET", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/empresa/retrieve?nombre=" + txtBuscar, //Dirección para realizar la petición HTTP        
+            url: "http://localhost:8080/curso/retrieve?nombre=" + txtBuscar, //Dirección para realizar la petición HTTP        
             contentType : "application/json",
             dataType : "json",
             success : function(response){
@@ -109,7 +114,7 @@ function retrieve(){
     else{
         $.ajax({        
             type: "GET", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/empresa/retrieve/" + id, //Dirección para realizar la petición HTTP        
+            url: "http://localhost:8080/curso/retrieve/" + id, //Dirección para realizar la petición HTTP        
             contentType : "application/json",
             dataType : "json",
             success : function(response){
@@ -133,10 +138,10 @@ function retrieve(){
 //
 $(function(){
 
-    // $("#frmEmpresa").validate();
+    // $("#frmCurso").validate();
 
-    $('#frmEmpresa').on('submit', function() {
-        var form = document.getElementById('frmEmpresa');
+    $('#frmCurso').on('submit', function() {
+        var form = document.getElementById('frmCurso');
         var a = form.checkValidity();
         console.log(a);
         if(a){

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta de Empleo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        
+        <div class="container">
+            <div class="py-5 text-center">
+                <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                <h2>Ofertas</h2>
+                <p class="lead"> Llegar juntos es el principio. Mantenerse juntos, es el progreso. Trabajar juntos es el éxito. </p>
+                <div class="input-group mb-3">
+                  <input id="txtBuscar" type="text" class="form-control" placeholder="Buscar por nombre o id..." aria-label="Buscar">
+                  <button id="btnBuscar" class="btn btn-outline-secondary" type="button">Buscar</button>
+                </div>
+              </div>
+
+                <!-- Inicio del Formulario -->
+                <div class="col-md-7 col-lg-8">
+                  <h4 class="mb-3">Información de Oferta</h4>
+                  <form id="frmOferta" method="POST" action="oferta-list.html" class="needs-validation" novalidate>
+                    <input type="hidden" id="IdOferta">
+                    <div class="row g-3">
+                      <div class="col-sm-6">
+                          <!-- Nombre -->
+                        <label for="txtPuesto" class="form-label">Puesto</label>
+                        <input type="text" class="form-control" id="puesto" name="puesto" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar el nombre del puesto que va a desempeñar
+                        </div>
+                      </div>
+                      <!-- Tipo -->
+                      <div class="col-12">
+                        <label for="txtTipo" class="form-label">Rango Sueldo</label>
+                        <input type="number" class="form-control" id="sueldo" name="sueldo" placeholder="">
+                        <div class="invalid-feedback">
+                          Debe ingresar el rango de sueldo de la Oferta
+                        </div>
+                      </div>
+                      
+                    
+                    <hr class="my-4">
+          
+                    <button class="w-100 btn btn-primary btn-lg" id="btnGuardar" type="submit">Guardar</button>
+                  </form>
+                </div>
+              </div>
+        </div>
+        
+       
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script> 
+    <script src="js/script-oferta-form.js"></script>
+    <script src="js/script-head-foot.js"></script>
+</body>
+</html>

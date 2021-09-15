@@ -1,7 +1,7 @@
 
 function serializeForm() {
     let trabajador = {
-        "idTrabajador":$("#idTrabajador").val(),
+        "idTrabajador":$("#IdTrabajador").val(),
         "nombre": $("#nombre").val(),
         "cedula": $("#cedula").val(),
         "direccion": $("#direccion").val(),
@@ -18,7 +18,7 @@ function serializeForm() {
 // funcion para poner datos
 function set(trabajador){
     
-    $("#idTrabajador").val(trabajador.idTrabajador);
+    $("#IdTrabajador").val(trabajador.idTrabajador);
     $("#nombre").val(trabajador.nombre);
     $("#cedula").val(trabajador.cedula);
     $("#direccion").val(trabajador.direccion);

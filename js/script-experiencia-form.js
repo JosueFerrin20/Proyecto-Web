@@ -1,21 +1,23 @@
 function serializeForm() {
-    let empresa = {
-        "idEmpresa":$("#IdEmpresa").val(),
-        "nombre": $("#nombre").val(),
-        "descripcion": $("#descripcion").val(),
-        "telefono":$("#telefono").val(),
-        
+    let experiencia = {
+        "idExperiencia":$("#IdExperiencia").val(),
+        "empresaAnterior": $("#empresaAnt").val(),
+        "motivoSalidaTrabajoAnterior": $("#motivo").val(),
+        "puestoDesempeñado": $("#puestoDes").val(),
+        "fecchaIngreso":$("#fechaIngreso").val(),
+        "fechaSalida":$("#fechaSalida").val()
     };
-    return empresa;
+    return experiencia;
 }
 
-function set(empresa){
+function set(experiencia){
     
-    $("#IdEmpresa").val(empresa.idEmpresa);
-    $("#nombre").val(empresa.nombre);
-    $("#descripcion").val(empresa.descripcion);
-    // $("#direccion").val(empresa.direccion);
-    $("#telefono").val(empresa.telefono);
+    $("#IdExperiencia").val(experiencia.idExperiencia);
+    $("#empresaAnt").val(experiencia.empresaAnterior);
+    $("#motivo").val(experiencia.motivoSalidaTrabajoAnterior);
+    $("#puestoDes").val(experiencia.puestoDesempeñado);
+    $("#fechaIngreso").val(experiencia.fecchaIngreso);
+    $("#fechaSalida").val(experiencia.fechaSalida);
     
 }
 
@@ -23,23 +25,23 @@ function set(empresa){
 // Funcion que guarda la info
 function save() {
    // validar 
-   var empresa = serializeForm();
-   console.log(empresa);
+   var experiencia = serializeForm();
+   console.log(experiencia);
 
-   let requestBody=JSON.stringify(empresa);
+   let requestBody=JSON.stringify(experiencia);
    console.log(requestBody);
    // Se utiliza JQuery para enviar datos al Backend 
-   if(empresa.idEmpresa==0){
+   if(experiencia.idExperiencia==0){
        $.ajax({
            type: "POST", //verbo de HTTP a utilizar 
-           url: "http://localhost:8080/empresa/create", // Direccion para realizar la peticion HTTP
+           url: "http://localhost:8080/experiencia/create", // Direccion para realizar la peticion HTTP
            data: requestBody,// El contenido Body de la petición HTTP
            contentType: "application/json",
            crossDomain: true,
            dataType: "json",
            succes : function(response){
                console.log(response);
-               alert("La empresa a sido creada correctamente");
+               alert("La experiencia a sido creada correctamente");
            },
            error: function (err) {
                console.error(err);
@@ -59,10 +61,10 @@ function save() {
        });
    } else{
        //Update
-       let id = empresa.idEmpresa;
+       let id = experiencia.idExperiencia;
        $.ajax({        
            type: "PUT", //Verbo de HTTP a utilizar
-           url: "http://localhost:8080/empresa/update/" + id, //Dirección para realizar la petición HTTP
+           url: "http://localhost:8080/experiencia/update/" + id, //Dirección para realizar la petición HTTP
            data: requestBody, //El contenido Body de la petición HTTP                
            contentType : "application/json",
            crossDomain: true,
@@ -87,7 +89,7 @@ function retrieve(){
     if(isNaN(id)){
         $.ajax({        
             type: "GET", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/empresa/retrieve?nombre=" + txtBuscar, //Dirección para realizar la petición HTTP        
+            url: "http://localhost:8080/experiencia/retrieve?nombre=" + txtBuscar, //Dirección para realizar la petición HTTP        
             contentType : "application/json",
             dataType : "json",
             success : function(response){
@@ -109,7 +111,7 @@ function retrieve(){
     else{
         $.ajax({        
             type: "GET", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/empresa/retrieve/" + id, //Dirección para realizar la petición HTTP        
+            url: "http://localhost:8080/experiencia/retrieve/" + id, //Dirección para realizar la petición HTTP        
             contentType : "application/json",
             dataType : "json",
             success : function(response){
@@ -133,10 +135,10 @@ function retrieve(){
 //
 $(function(){
 
-    // $("#frmEmpresa").validate();
+    // $("#frmExperiencia").validate();
 
-    $('#frmEmpresa').on('submit', function() {
-        var form = document.getElementById('frmEmpresa');
+    $('#frmExperiencia').on('submit', function() {
+        var form = document.getElementById('frmExperiencia');
         var a = form.checkValidity();
         console.log(a);
         if(a){
@@ -149,4 +151,3 @@ $(function(){
     }); 
 
 });
-// 

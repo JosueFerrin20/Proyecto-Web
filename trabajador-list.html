@@ -36,7 +36,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody id="tblTrabajadores">
+                <tbody id="tblTrabajadores" name="tblTrabajadores">
 
                 </tbody>
             </table>
@@ -46,7 +46,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-tittle" id="lblNombre"></h5>
+                            <h5 class="modal-tittle" id="lblNombre" name="lblNombre" ></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -66,7 +66,7 @@
                             <span id="spTitulo"></span><br>
                             <label>Tipo</label>
                             <span id="spTipo"></span><br>
-                            <input type="hidden" id="txtIdTrabajador"> <!-- Es un control que contiene el valor del ID del trabajador agregado-->
+                            <input class="form-control" type="hidden" id="txtIdTrabajador" name="txtIdTrabajador"> <!-- Es un control que contiene el valor del ID del trabajador agregado-->
                         </div>
                         <div class="modal-footer">
                             <button id="btnEliminar" type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>

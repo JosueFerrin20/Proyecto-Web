@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Experiencia</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <header></header>
+
+    <main>
+        <section class="py-5 container">
+            <div id="divExperiencia">
+            </div>
+            <h3>Listado de Experiencia</h3>
+            <hr>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Empresa anterior</th>
+                        <th scope="col">Motivo de Salida</th>
+                        <th scope="col">Puesto Desempeñado</th>
+                        <th scope="col">Fecha de Ingreso</th>
+                        <th scope="col">Fecha de Salida</th>
+                        <!-- <th scope="col">Dirección</th> -->
+                        
+                        
+                        <th scope="col">
+                            <a href="experiencia-form.html" class="btn btn-success">Nueva</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tblExperiencias" name="tblExperiencias">
+
+                </tbody>
+            </table>
+
+            <!-- Modal consultar -->
+            <div class="modal fade" id="mdExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-tittle" id="lblNombre"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label>Motivo de Salida</label>
+                            <span id="spMotivo"></span><br>
+                            <label>Puesto Desempeñado</label>
+                            <span id="spPuestoDes"></span><br>
+                            <label>Fecha Ingreso</label>
+                            <span id="spFechaIn"></span><br>
+                            <label>Fecha Salida</label>
+                            <span id="spFechaSal"></span><br>
+                            <!-- <label>Dirección</label>
+                            <span id="spDireccion"></span><br> -->
+                            
+                            
+                            
+                            <input class="form-control" type="hidden" id="txtIdExperiencia"> <!-- Es un control que contiene el valor del ID del trabajador agregado-->
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnEliminar" type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+                            <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer></footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script-experiencia-list.js"></script>
+    <script src="js/script-head-foot.js"></script>
+</body>
+</html>

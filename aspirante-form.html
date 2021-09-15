@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirante</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        
+        <div class="container">
+            <div class="py-5 text-center">
+                <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                <h2>Aspirantes</h2>
+                <p class="lead"> Llegar juntos es el principio. Mantenerse juntos, es el progreso. Trabajar juntos es el éxito. </p>
+                <div class="input-group mb-3">
+                  <input id="txtBuscar" type="text" class="form-control" placeholder="Buscar por nombre o id..." aria-label="Buscar">
+                  <button id="btnBuscar" class="btn btn-outline-secondary" type="button">Buscar</button>
+                </div>
+              </div>
+
+                <!-- Inicio del Formulario -->
+                <div class="col-md-7 col-lg-8">
+                  <h4 class="mb-3">Información del Aspirante</h4>
+                  <form id="frmAspirante" method="POST" action="aspirante-list.html" class="needs-validation" novalidate>
+                    <input type="hidden" id="IdAspirante">
+                    <div class="row g-3">
+                      <div class="col-sm-6">
+                          <!-- Aspiracion -->
+                        <label for="txtNombre" class="form-label">Aspiracion Salarial</label>
+                        <input type="number" class="form-control" id="aspiracionSal" name="aspiracionSal" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar la aspiracion salarial que desea el aspirante
+                        </div>
+                      </div>
+
+                      <!-- fecha ingreso -->
+                      <div class="col-sm-4">
+                        <label for="txtFecha" class="form-label">Fecha del Registro</label>
+                        <input type="date" value="10" min="1" class="form-control" id="fechaIngreso" name="fechaIngreso" required>                
+                      </div>
+                      
+                    
+                    <hr class="my-4">
+          
+                    <button class="w-100 btn btn-primary btn-lg" id="btnGuardar" type="submit">Guardar</button>
+                  </form>
+                </div>
+              </div>
+        </div>
+        
+       
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script> 
+    <script src="js/script-curso-form.js"></script>
+    <script src="js/script-head-foot.js"></script>
+</body>
+</html>

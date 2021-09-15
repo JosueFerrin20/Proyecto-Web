@@ -1,13 +1,15 @@
 function retrieve(id){
     $.ajax({
         type: "GET", //verbo de HTTP a utilizar
-        URL: "https://localhost:8080/trabajador/retrieve"+id,
+        url: "http://localhost:8080/trabajador/retrieve/"+id,
         contentType: "application/json",
         dataType: "json",
         success: function(response){
             console.log(response);
             // response trae la lista de trabajadores como un arreglo JSON 
             let trabajador=response;
+            console.log(trabajador.idTrabajador);
+
             $("#lblNombre").html(trabajador.nombre);
             $("#spCedula").html(trabajador.cedula);
             $("#spDirecction").html(trabajador.direccion);
@@ -17,7 +19,8 @@ function retrieve(id){
             $("#spGradoAcademico").html(trabajador.gradoAcademico);
             $("#spTitulo").html(trabajador.titulo);
             $("#spTipo").html(trabajador.tipo);
-            $("#txtIdTrabajador").html(trabajador.idTrabajador);
+            $("#txtIdTrabajador").val(trabajador.idTrabajador);
+            
         },
         error : function(err){
             console.error(err);
@@ -28,6 +31,7 @@ function retrieve(id){
 function show(lista) {
    $("#tblTrabajadores").empty();
    lista.forEach(trabajador => {
+       console.log(trabajador.idTrabajador)
        $("#tblTrabajadores").append('<tr>'
             + '<td>' + trabajador.nombre + '</td>'
             + '<td>' + trabajador.cedula + '</td>'
@@ -46,37 +50,40 @@ function show(lista) {
    }); 
 }
 
-function list() {
-    //Utilizacion de JQuery AJAX para enviar al backend
-    $.ajax({
-        type: "GET", //verbo de HTTP a utilizar
-        URL: "https://localhost:8080/trabajador/list",
-        contentType: "application/json",
-        dataType: "json",
-        success: function(response){
+function list(){
+    //Utilizar jQuery AJAX para enviar al Backend
+    $.ajax({        
+        type: "GET", //Verbo de HTTP a utilizar
+        url: "http://localhost:8080/trabajador/list", //Dirección para realizar la petición HTTP        
+        contentType : "application/json",
+        dataType : "json",
+        success : function(response){
             console.log(response);
-            // response trae la lista de trabajadores como un arreglo JSON 
+            //response trae la lista de variedades como un Arreglo JSON
             show(response);
-        },
-        error : function(err){
-            console.error(err);
-        },
-        complete : function(result, textStatus){
-            if(result.status=404){
+		},
+		error : function(err){
+			console.error(err);
+		},
+        complete: function(xhr, textStatus) {            
+            if(xhr.status == 404){
                 alert(xhr.responseText);
             }
-            if(result.status=500){
+            if(xhr.status == 500){
                 alert(xhr.responseText);
             }
-        }
+        }       
     });
 }
 
+
+
 function del() {
     let id=$("#txtIdTrabajador").val();
+    console.log(id);
     $.ajax({
         type: "DELETE", //verbo de HTTP a utilizar
-        URL: "https://localhost:8080/trabajador/delete/"+id,
+        url: "http://localhost:8080/trabajador/delete/"+id,
         contentType: "application/json",
         dataType: "json",
         success : function(response){

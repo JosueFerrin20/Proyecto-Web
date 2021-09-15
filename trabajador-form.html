@@ -21,7 +21,7 @@
         
         <div class="container">
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="57">
+                
                 <h2>Trabajador - Empleado</h2>
                 <p class="lead">Si tú sabes lo que vales, ve y consigue lo que mereces. </p>
                 <!-- Barra - Buscar -->
@@ -30,61 +30,12 @@
                   <button id="btnBuscar" class="btn btn-outline-secondary" type="button">Buscar</button>
                 </div>
               </div>
-              <!-- Tabla de precios (innecesaria de momento) -->
-              <!-- <div class="row g-3">
-                <div class="col-md-5 col-lg-4 order-md-last">
-                  <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">عربة التسوق</span>
-                    <span class="badge bg-secondary rounded-pill">3</span>
-                  </h4>
-                  <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                      <div>
-                        <h6 class="my-0">اسم المنتج</h6>
-                        <small class="text-muted">وصف مختصر</small>
-                      </div>
-                      <span class="text-muted">$12</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                      <div>
-                        <h6 class="my-0">المنتج الثاني</h6>
-                        <small class="text-muted">وصف مختصر</small>
-                      </div>
-                      <span class="text-muted">$8</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                      <div>
-                        <h6 class="my-0">البند الثالث</h6>
-                        <small class="text-muted">وصف مختصر</small>
-                      </div>
-                      <span class="text-muted">$5</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between bg-light">
-                      <div class="text-success">
-                        <h6 class="my-0">رمز ترويجي</h6>
-                        <small>EXAMPLECODE</small>
-                      </div>
-                      <span class="text-success">-$5</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                      <span>مجموع (USD)</span>
-                      <strong>$20</strong>
-                    </li>
-                  </ul>
-          
-                  <form class="card p-2">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="رمز ترويجي">
-                      <button type="button" class="btn btn-secondary">تحقق</button>
-                    </div>
-                  </form>
-                </div> -->
-                <!-- Fin de Tabla de precios -->
+              
 
                 <!-- Inicio del Formulario -->
                 <div class="col-md-7 col-lg-8">
                   <h4 class="mb-3">Documentación</h4>
-                  <form id="frmTrabajador" method="GET" action="trabajador-list.html" class="needs-validation" novalidate>
+                  <form id="frmTrabajador" method="POST" action="trabajador-list.html" class="needs-validation" novalidate>
                     <input type="hidden" id="IdTrabajador">
                     <div class="row g-3">
                       <div class="col-sm-6">
@@ -108,7 +59,7 @@
                         <label for="txtDireccion" class="form-label">Dirección</label>
                         <input type="text" class="form-control" id="direccion" placeholder="1234 Calle..." required>
                         <div class="invalid-feedback">
-                          يرجى إدخال عنوان الشحن الخاص بك.
+                          Debe ingresar la dirección del trabajador
                         </div>
                       </div>
                       <!-- Telefono -->
@@ -116,7 +67,7 @@
                         <label for="txtTelefono" class="form-label">Teléfono<span class="text-muted">(Celular)</span></label>
                         <input type="text" class="form-control" id="telefono" placeholder="09********">
                         <div class="invalid-feedback">
-                          يرجى إدخال عنوان بريد إلكتروني صحيح لتصلكم تحديثات الشحن.
+                          Debe ingresar el telefono/celular del trabajador
                         </div>
                       </div>
                       <!-- Email -->
@@ -125,7 +76,7 @@
                         <div class="input-group has-validation">
                             <input type="text" class="form-control" id="email" placeholder="example@e-mail.com" required>
                         <div class="invalid-feedback">
-                          اسم المستخدم الخاص بك مطلوب.
+                          Debe ingresar el email del trabajador
                           </div>
                         </div>
                       </div>
@@ -141,7 +92,7 @@
                           <option value="Otro">Otro</option>
                         </select>
                         <div class="invalid-feedback">
-                          يرجى اختيار بلد صحيح.
+                          Ingese el sexo del trabajador
                         </div>
                       </div>
 
@@ -156,7 +107,7 @@
                         </select>
                         
                         <div class="invalid-feedback">
-                          يرجى اختيار اسم منطقة صحيح.
+                          Ingrese el grado académico del trabajador
                         </div>
                         
                        </div> 
@@ -165,7 +116,7 @@
                         <label for="txtTitulo" class="form-label">Título</label>
                         <input type="text" class="form-control" id="titulo" placeholder="" required>
                         <div class="invalid-feedback">
-                          الرمز البريدي مطلوب.
+                          Ingrese el Titulo del trabajador
                         </div>
                       </div>
                     </div>
@@ -185,7 +136,7 @@
                       </select>
                       
                       <div class="invalid-feedback">
-                        يرجى اختيار اسم منطقة صحيح.
+                        Ingrese el Tipo de trabajador
                       </div>
                       
                      </div> 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiencia</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        
+        <div class="container">
+            <div class="py-5 text-center">
+                <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                <h2>Experiencia</h2>
+                <p class="lead"> Llegar juntos es el principio. Mantenerse juntos, es el progreso. Trabajar juntos es el éxito. </p>
+                <div class="input-group mb-3">
+                  <input id="txtBuscar" type="text" class="form-control" placeholder="Buscar por nombre o id..." aria-label="Buscar">
+                  <button id="btnBuscar" class="btn btn-outline-secondary" type="button">Buscar</button>
+                </div>
+              </div>
+
+                <!-- Inicio del Formulario -->
+                <div class="col-md-7 col-lg-8">
+                  <h4 class="mb-3">Información de la Experiencia</h4>
+                  <form id="frmExperiencia" method="POST" action="experiencia-list.html" class="needs-validation" novalidate>
+                    <input type="hidden" id="IdExperiencia">
+                    <div class="row g-3">
+                      <div class="col-sm-6">
+                        
+                          <!-- Empresa Anterior-->
+                        <label for="txtNombre" class="form-label">Empresa anterior</label>
+                        <input type="text" class="form-control" id="empresaAnt" name="empresaAnt" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar el nombre de la Empresa anterior
+                        </div>
+                      </div>
+                      <!-- Motivo de Salida del trabajo anterior -->
+                      <div class="col-sm-6">
+                        <label for="txtDescripcion" class="form-label">Motivo de Salida</label>
+                        <textarea class="form-control" id="motivo" name="motivo" rows="3"></textarea>
+                        <div class="invalid-feedback">
+                          Debe ingresar el motivo de salida del trabajo anterior
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <label for="txtPuestoDesempeñado" class="form-label">Puesto Desempeñado</label>
+                        <input type="text" class="form-control" id="puestoDes" name="puestoDes" placeholder="">
+                        <div class="invalid-feedback">
+                          Debe ingresar el puesto en el que estuvo en la anterior empresa
+                        </div>
+                      </div>
+                      
+                      <!-- fecha ingreso -->
+                      <div class="col-sm-6">
+                        <label for="txtFecha" class="form-label">Fecha de Ingreso</label>
+                        <input type="date" value="10" min="1" class="form-control" id="fechaIngreso" name="fechaIngreso" required>                
+                      </div>
+                      
+                      <!-- fecha salida-->
+                      <div class="col-sm-6">
+                        <label for="txtFecha" class="form-label">Fecha de Salida</label>
+                        <input type="date" value="10" min="1" class="form-control" id="fechaSalida" name="fechaIngreso" required>                
+                      </div>
+                    
+                    <hr class="my-4">
+          
+                    <button class="w-100 btn btn-primary btn-lg" id="btnGuardar" type="submit">Guardar</button>
+                  </form>
+                </div>
+              </div>
+        </div>
+        
+       
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script> 
+    <script src="js/script-experiencia-form.js"></script>
+    <script src="js/script-head-foot.js"></script>
+</body>
+</html>
